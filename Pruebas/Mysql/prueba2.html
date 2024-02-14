@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        background-color: #f2f2f2;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px #999;
+      }
+
+      p {
+        margin-bottom: 10px;
+        width: 33.33%;
+        text-align: center;
+      }
+
+      input[type="text"], select {
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-shadow: 0 0 10px #999;
+        width: 100%;
+      }
+
+      button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+        width: 100%;
+      }
+
+      #result {
+        background-color: #f2f2f2;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px #999;
+        margin-top: 20px;
+        font-size: 16px;
+      }
+    </style>
+    <script>
+      function showResult() {
+        var input1 = document.getElementById("input1").value;
+        var input2 = document.getElementById("input2").value;
+        var input3 = document.getElementById("input3").value;
+        var input4 = document.getElementById("input4").value;
+        var input5 = document.getElementById("input5").value;
+        var input6 = document.getElementById("input6").value;
+        var input7 = document.getElementById("input7").value;
+        var input8 = document.getElementById("input8").value;
+        var selectBox = document.getElementById("selectBox").value;
+        
+        document.getElementById("result").innerHTML = 
+          "Input 1: " + input1 + "<br>" +
+          "Input 2: " + input2 + "<br>" +
+          "Input 3: " + input3 + "<br>" +
+          "Input 4: " + input4 + "<br>" +
+          "Input 5: " + input5 + "<br>" +
+          "Input 6: " + input6 + "<br>" +
+          "Input 7: " + input7 + "<br>" +
+          "Input 8: " + input8 + "<br>" +
+          "Selected Option: " + selectBox;
+      }
+    </script>
+  </head>
+  <body>
+    <p>CPE:</p>
+    <input type="text" id="input1"><br>
+    <p>CPE:</p>
+    <input type="text" id="input2"><br>
+    <p>CPE:</p>
+    <input type="text" id="input3"><br>
+    <p>CPE:</p>
+    <input type="text" id="input4"><br>
+    <input type="text" id="input5"><br>
+    <input type="text" id="input6"><br>
+    <input type="text" id="input7"><br>
+    <input type="text" id="input8"><br>
+    <select id="options">
+      <option value="Option 1">Option 1</option>
+      <option value="Option 2">Option 2</option>
+      <option value="Option 3">Option 3</option>
+      <option value="Option 4">Option 4</option>
+    </select><br>
+    <button type="button" onclick="showResult()">Show Result</button>
+    <br><br>
+    <div id="result"></div>
+  </body>
+</html>
