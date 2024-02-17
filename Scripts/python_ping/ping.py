@@ -41,9 +41,6 @@ def main():
     wb = Workbook()
     ws = wb.active
     ws.append(["IP", "Estado", "Tiempo (ms)", "Fecha y Hora"])
-    ws['B1'] = 'Estado'
-    ws['B2'] = 'Verdadero'
-    ws['B3'] = 'Falso'
     
     with open("ips.txt", "r") as file:
         ips = file.read().splitlines()
@@ -54,19 +51,11 @@ def main():
         if is_up:
             print(f"{ip} está arriba, tiempo de respuesta: {time_ms}ms")
             ws.append([ip, "Verdadero", time_ms, current_time])
-            ws.conditional_formatting.add('B1:B2',
-            CellIsRule(operator='equal', formula=['"Verdadero"'], fill=PatternFill(start_color='00FF00', end_color='00FF00', fill_type='solid')))
-           
+                                   
         else:
             print(f"{ip} no responde.")
             ws.append([ip, "Falso", time_ms, current_time])
-            ws.conditional_formatting.add('B1:B2',
-            CellIsRule(operator='equal', formula=['"Falso"'], fill=PatternFill(start_color='FF0000', end_color='FF0000', fill_type='solid')))
-            
-    
-    
-    
-    
+                
     wb.save("resultados_ping.xlsx")
     print("Resultados exportados a resultados_ping.xlsx.")
 
