@@ -57,7 +57,7 @@ def main():
             ws.append([ip, "Falso", time_ms, current_time])
                 
     wb.save("resultados_ping.xlsx")
-    print("Resultados exportados a resultados_ping.xlsx.")
+    print("Resultados exportados a resultados_ping.xlsx. dentro de la misma carpeta")
 
 if __name__ == "__main__":
     main()
